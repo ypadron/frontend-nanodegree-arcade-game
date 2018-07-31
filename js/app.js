@@ -2,9 +2,9 @@
 var Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-    this.x = x;
-    this.y = y;
-    this.speed = speed;
+    this.x = 50;
+    this.y = 50;
+    this.speed = 25;
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
