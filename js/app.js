@@ -48,7 +48,14 @@ Player.prototype.render = function() {
 
 //This method receives user input via allowedKeys. Moves player around the board.
 Player.prototype.handleInput = function(dt) {
-
+    if (event.keyCode == 38) {
+      this.y -= 95;
+    } else if (event.keyCode == 40) {
+      this.y += 95;
+    } else if (event.keyCode == 39) {
+      this.x += 95;
+    } else if (event.keyCode == 37)
+      this.x -= 95;
 };
 
 // Now instantiate your objects.
