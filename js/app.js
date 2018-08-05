@@ -51,16 +51,31 @@ Player.prototype.render = function() {
 };
 
 //This method receives user input via allowedKeys. Moves player around the board.
-Player.prototype.handleInput = function(dt) {
-    if (event.keyCode == 38) {
-      this.y -= 95;
-    } else if (event.keyCode == 40) {
-      this.y += 95;
-    } else if (event.keyCode == 39) {
-      this.x += 95;
-    } else if (event.keyCode == 37)
-      this.x -= 95;
-};
+Player.prototype.handleInput = function(direction) {
+    switch (direction) {
+      case "up":
+        if (this.y > 0) {
+          this.y -= 95;
+      }
+      break;
+      case "down":
+        if (this.y < 400) {
+          this.y += 95;
+        }
+        break;
+      case "right":
+        if (this.x < 350) {
+          this.x += 95;
+        }
+        break;
+      case "left":
+        if (this.x > 10) {
+          this.x -= 95;
+        }
+        break;
+      }
+    }
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
