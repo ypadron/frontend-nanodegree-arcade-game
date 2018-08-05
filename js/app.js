@@ -1,10 +1,23 @@
 // Enemies our player must avoid
+/*
+class Enemy {
+  constructor(x = 50, y = 50, speed = 25, sprite = "images/enemy-bug.png") {
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
+    this.sprite = sprite;
+  }
+}
+*/
+
 var Enemy = function() {
+
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
     this.x = 50;
     this.y = 50;
     this.speed = 25;
+
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -80,6 +93,16 @@ Player.prototype.handleInput = function(direction) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+/*
+class BugOne extends Enemy {
+    constructor(speed = 75, sprite, x = 50, y = 100) {
+      super(sprite);
+      this.x = x;
+      this.y = y;
+      this.speed = speed;
+    }
+}
+*/
 const bugOne = new Enemy();
 
 const allEnemies = [];
