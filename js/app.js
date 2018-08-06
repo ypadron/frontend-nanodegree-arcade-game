@@ -10,13 +10,13 @@ class Enemy {
 }
 */
 
-var Enemy = function() {
+var Enemy = function(x, y, speed) {
 
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-    this.x = 50;
-    this.y = 50;
-    this.speed = 25;
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
 
 
     // The image/sprite for our enemies, this uses
@@ -30,9 +30,9 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.x += 3;
+    this.x += this.speed * dt;
     if (this.x > 500) {
-      this.x = 0;
+      this.x = -50;
     }
 };
 
@@ -95,19 +95,30 @@ Player.prototype.handleInput = function(direction) {
 // Place the player object in a variable called player
 /*
 class BugOne extends Enemy {
-    constructor(speed = 75, sprite, x = 50, y = 100) {
-      super(sprite);
-      this.x = x;
+    constructor(speed = 75, sprite, x, y = 100) {
+      super(x, sprite);
       this.y = y;
       this.speed = speed;
     }
 }
 */
-const bugOne = new Enemy();
 
+const bugOne = new Enemy(-50, 50, 100);
+const bugTwo = new Enemy(-50, 150, 200);
+const bugThree = new Enemy(-50, 225, 300);
+
+/*
+class BugTwo extends Enemy {
+  constructor(y = 150, speed = 150 ) {
+    super(x, sprite);
+  }
+}
+*/
 const allEnemies = [];
 
-allEnemies.push(bugOne);
+allEnemies.push(bugOne, bugTwo, bugThree);
+// allEnemies.push(bugTwo);
+
 
 const player = new Player();
 
