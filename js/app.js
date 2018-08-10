@@ -122,9 +122,10 @@ class BugOne extends Enemy {
 }
 */
 
-const bugOne = new Enemy(-50, 50, 100);
-const bugTwo = new Enemy(-50, 150, 200);
-const bugThree = new Enemy(-50, 225, 300);
+const bugOne = new Enemy(-50, 63, 100);
+const bugFour = new Enemy(-202, 63, 275);
+const bugTwo = new Enemy(-50.5, 146, 300);
+const bugThree = new Enemy(-50, 229, 200);
 
 /*
 class BugTwo extends Enemy {
@@ -135,7 +136,7 @@ class BugTwo extends Enemy {
 */
 const allEnemies = [];
 
-allEnemies.push(bugOne, bugTwo, bugThree);
+allEnemies.push(bugOne, bugTwo, bugThree, bugFour);
 // allEnemies.push(bugTwo);
 
 
