@@ -34,6 +34,17 @@ Enemy.prototype.update = function(dt) {
     if (this.x > 500) {
       this.x = -50;
     }
+    //Check for Player/Enemy collision
+    for (let enemy of allEnemies) {
+
+        if (player.y === this.y) {
+          console.log("same column!!")
+            // alert("I'm hit. Back to Zero!");
+            // player.reset();
+      }
+      console.log(player.y, this.y);
+    }
+
 };
 
 // Draw the enemy on the screen, required method for game
@@ -60,16 +71,6 @@ Player.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    //Check for Player/Enemy collision
-    for (let enemy of allEnemies) {
-
-        if (this.y === enemy.y) {
-          console.log("same row!!")
-            // alert("I'm hit. Back to Zero!");
-            // this.reset();
-      }
-      console.log(this.y, enemy.y);
-    }
     //Check to see if player won/reached the water
     if(this.y < 25) {
       alert("You're Safe!!");
