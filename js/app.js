@@ -52,16 +52,15 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-
-
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 const Player = function() {
-    this.x = 200;
-    this.y = 395;
-    // this.startX = 200;
-    // this.startY = 400;
+    this.startPosX = 200;
+    this.startPosY = 395;
+    this.x = this.startPosX;
+    this.y = this.startPosY;
+    this.resetPlayer =
     this.sprite = "images/char-cat-girl.png";
 };
 
