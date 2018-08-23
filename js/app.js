@@ -65,6 +65,8 @@ const Player = function() {
     this.y = this.startPosY;
     // this.resetPlayer =
     this.sprite = "images/char-cat-girl.png";
+    this.lateral = 101;
+    this.vertical = 83;
 };
 
 // Update the player's position, required method for game
