@@ -60,7 +60,7 @@ const Player = function() {
     this.startPosY = 395;
     this.x = this.startPosX;
     this.y = this.startPosY;
-    this.resetPlayer =
+    // this.resetPlayer =
     this.sprite = "images/char-cat-girl.png";
 };
 
