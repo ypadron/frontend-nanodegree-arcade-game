@@ -17,6 +17,7 @@ var Enemy = function(x, y, speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
+    this.lateral = 101;
 
 
     // The image/sprite for our enemies, this uses
@@ -34,11 +35,13 @@ Enemy.prototype.update = function(dt) {
     if (this.x > 500) {
       this.x = -50;
     }
-    //Check for Player/Enemy collision
+    //Check for Player/Enemy collision.
+    //https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+    //col * 101, row * 83
     for (let enemy of allEnemies) {
 
         if (player.y === this.y) {
-          console.log("same column!!")
+          console.log("column collision detected!!");
             // alert("I'm hit. Back to Zero!");
             // player.reset();
       }
