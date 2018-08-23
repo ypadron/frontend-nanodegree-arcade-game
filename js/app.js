@@ -40,10 +40,10 @@ Enemy.prototype.update = function(dt) {
     //col * 101, row * 83
     for (let enemy of allEnemies) {
 
-        if (player.y === this.y) {
-          console.log("column collision detected!!");
+        if (player.y === this.y && (this.x + this.lateral/2 > player.x && this.x < player.x + player.lateral/2)) {
+          // alert("collision detected!!");
             // alert("I'm hit. Back to Zero!");
-            // player.reset();
+            player.reset();
       }
       console.log(player.y, this.y);
     }
