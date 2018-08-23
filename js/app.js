@@ -42,10 +42,10 @@ Enemy.prototype.update = function(dt) {
 
         if (player.y === this.y && (this.x + this.lateral/2 > player.x && this.x < player.x + player.lateral/2)) {
           // alert("collision detected!!");
-            // alert("I'm hit. Back to Zero!");
-            player.reset();
+          // alert("I'm hit. Back to Zero!");
+          player.reset();
       }
-      console.log(player.y, this.y);
+      // console.log(player.y, this.y);
     }
 
 };
@@ -69,6 +69,10 @@ const Player = function() {
     this.vertical = 83;
 };
 
+Player.prototype.reset = function() {
+    this.x = this.startPosX;
+    this.y = this.startPosY;
+}
 // Update the player's position, required method for game
 // Parameter: dt, a time delta between ticks
 Player.prototype.update = function(dt) {
