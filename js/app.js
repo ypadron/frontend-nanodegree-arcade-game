@@ -79,9 +79,9 @@ Player.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    //Check to see if player won/reached the water
-    if(this.y < 25) {
-      alert("You're Safe!!");
+    //Check to see if player has won/reached the water
+    if(this.y === -20) {
+      console.log("You're a badass!!");
     }
 };
 
@@ -95,7 +95,7 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(direction) {
     switch (direction) {
       case "up":
-        if (this.y > -101) {
+        if (this.y > -20) {
           this.y -= 83;
       }
       break;
