@@ -79,10 +79,8 @@ Player.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+
     //Check to see if player has won/reached the water
-    if(this.y === -20) {
-      console.log("You're a badass!!");
-    }
 };
 
 // Draw the player on the screen, required method for game
@@ -116,7 +114,6 @@ Player.prototype.handleInput = function(direction) {
         break;
       }
     }
-
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies

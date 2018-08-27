@@ -22,7 +22,30 @@ var Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        lastTime;
+        lastTime,
+        myReq;
+        //game over modal
+        let modal =  document.querySelector(".modal");
+
+        //get span that closes the modal => grabs the X
+        let closeModal = document.querySelector(".close");
+
+        //replay button in modal
+        let button = document.querySelector(".replay");
+
+        //user clicks on <span> X, to close the modal & reset the player
+        // closeModal.addEventListener("click", player.reset(), false);
+
+        //close modal and reset player when user clicks on replay button
+        button.onclick = function() {
+        player.reset();
+        // modal.classList.toggle("hide");
+        modal.style.display = "none";
+        win.requestAnimationFrame(main);
+        }
+
+
+
 
     canvas.width = 505;
     canvas.height = 606;
@@ -54,8 +77,19 @@ var Engine = (function(global) {
 
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
+         * https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+         * https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame
          */
-        win.requestAnimationFrame(main);
+         if(player.y === -20) {
+           // console.log("You're a badass!!");
+           win.cancelAnimationFrame(myReq);
+           modal.classList.toggle("show");
+           modal.style.display = "block";
+         }
+         else {
+             myReq = win.requestAnimationFrame(main);
+         }
+        // win.requestAnimationFrame(main);
     }
 
     /* This function does some initial setup that should only occur once,
