@@ -73,14 +73,17 @@ Player.prototype.reset = function() {
     this.x = this.startPosX;
     this.y = this.startPosY;
 }
+
 // Update the player's position, required method for game
 // Parameter: dt, a time delta between ticks
 Player.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-
     //Check to see if player has won/reached the water
+    if(player.y === -20) {
+      console.log("You're a badass!!");
+    }
 };
 
 // Draw the player on the screen, required method for game
