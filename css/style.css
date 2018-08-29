@@ -1,6 +1,32 @@
 body {
     text-align: center;
 }
+/*
+* Styles for Score panel
+*/
+.score-panel {
+    /* text-align: right; */
+    /* float: right; */
+    width: 400px;
+    margin: 25px 0 -35px 350px;
+    /* margin-bottom: -35px; */
+}
+
+.score-panel .life {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 50px 0 0;
+}
+
+.score-panel .life li {
+    list-style: none;
+    display: inline-block;
+}
+
+.fa-heart {
+      color: red;
+}
 
 /*
 *Styles for the modal
