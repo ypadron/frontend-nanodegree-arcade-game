@@ -1,6 +1,11 @@
 body {
     text-align: center;
 }
+
+header {
+    font-family: 'Paytone One', sans-serif;
+}
+
 /*
 * Styles for Score panel
 */
