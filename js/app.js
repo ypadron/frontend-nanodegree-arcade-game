@@ -11,14 +11,12 @@ class Enemy {
 */
 
 var Enemy = function(x, y, speed) {
-
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
     this.x = x;
     this.y = y;
     this.speed = speed;
     this.lateral = 101;
-
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -39,15 +37,14 @@ Enemy.prototype.update = function(dt) {
     //https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
     //col * 101, row * 83
     for (let enemy of allEnemies) {
-
         if (player.y === this.y && (this.x + this.lateral/2 > player.x && this.x < player.x + player.lateral/2)) {
           // alert("collision detected!!");
           // alert("I'm hit. Back to Zero!");
           player.reset();
+          // loseLife();
       }
       // console.log(player.y, this.y);
     }
-
 };
 
 // Draw the enemy on the screen, required method for game
@@ -72,7 +69,7 @@ const Player = function() {
 Player.prototype.reset = function() {
     this.x = this.startPosX;
     this.y = this.startPosY;
-}
+};
 
 // Update the player's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -82,7 +79,8 @@ Player.prototype.update = function(dt) {
     // all computers.
     //Check to see if player has won/reached the water
     if(player.y === -20) {
-      console.log("You're a badass!!");
+      // console.log("You're a badass!!");
+      // addPoints();
     }
 };
 
@@ -116,7 +114,7 @@ Player.prototype.handleInput = function(direction) {
         }
         break;
       }
-    }
+    };
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -148,7 +146,6 @@ const allEnemies = [];
 allEnemies.push(bugOne, bugTwo, bugThree, bugFour);
 // allEnemies.push(bugTwo);
 
-
 const player = new Player();
 
 // This listens for key presses and sends the keys to your
@@ -163,3 +160,23 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// let points = 0;
+// let pointCounter = document.querySelector(".points");
+
+/*
+function addPoints () {
+    pointCounter.innerHTML = points;
+    points += 3;
+}
+*/
+
+/*
+function loseLife () {
+    let life = document.getElementsByClassName("fa-heart");
+    let lifeSpan = [...life]
+    for (i = 0; i < lifeSpan.length; i++) {
+          lifeSpan[life].style.visibility = "collapse");
+    }
+  }
+*/
