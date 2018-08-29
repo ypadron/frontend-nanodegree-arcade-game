@@ -33,12 +33,17 @@ var Engine = (function(global) {
         //replay button in modal
         let button = document.querySelector(".replay");
 
+        /*
         //user clicks on <span> X, to close the modal & reset the player
-        // closeModal.addEventListener("click", player.reset(), false);
+        //TODO Not sure why this doesn't work -> diff between ES5, ES2015, and ES6 functions?
+        //TODO need to review - have tried -> player.reset() & reset
+        closeModal.addEventListener("click", reset(), false);
+        */
 
         //close modal and reset player when user clicks on replay button
         button.onclick = function() {
         player.reset();
+        points = 0;
         // modal.classList.toggle("hide");
         modal.style.display = "none";
         win.requestAnimationFrame(main);
