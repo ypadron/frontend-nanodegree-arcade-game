@@ -27,11 +27,11 @@ To play the game:
 
 ## Resources Used
 
-*[2d Collision Detection](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
-*[Request Animation Frame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
-*[Cancel Animation Frame](https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame)
-*(https://discussions.udacity.com/t/i-dont-understand-how-to-code-classic-arcade-game/527836/2)
-*[Matthew Cranford's Arcade Game Walkthrough](https://matthewcranford.com/arcade-game-walkthrough-part-1-starter-code-breakdown/)
+* [2d Collision Detection](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
+* [Request Animation Frame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+* [Cancel Animation Frame](https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame)
+* (https://discussions.udacity.com/t/i-dont-understand-how-to-code-classic-arcade-game/527836/2)
+* [Matthew Cranford's Arcade Game Walkthrough](https://matthewcranford.com/arcade-game-walkthrough-part-1-starter-code-breakdown/)
 
 ## Contributing
 
