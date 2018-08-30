@@ -14,8 +14,7 @@ Front End Web Developer Nanodegree Program
 
 This game is a version of the classic arcade game Frogger. In this version you, the Player, try to cross the road to the water while avoiding the Enemies (bugs). Use the arrow keys to navigate up, down, left, and right. Beware, the enemies are moving across the paved road at varying speeds, and if the Player collides with an enemy the game is reset, and the Player goes back to the starting position. The Player is safe once you reach the water and the game is over.
 
-*insert preview image
-
+![Classic Arcade Game](https://github.com/ypadron/frontend-nanodegree-arcade-game/blob/master/images/Classic%20Arcade%20Game%20-%20%20gameboard%20screenshot.png)
 
 ## Instructions
 
