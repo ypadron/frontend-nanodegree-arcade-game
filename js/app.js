@@ -39,7 +39,7 @@ Enemy.prototype.update = function(dt) {
     //https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
     //col * 101, row * 83
     for (let enemy of allEnemies) {
-        if (player.y === this.y && (this.x + this.lateral/2 > player.x && this.x < player.x + player.lateral/2)) {
+        if (player.y === this.y && (this.x + this.lateral/3 > player.x && this.x < player.x + player.lateral/3)) {
           // alert("I'm hit. Back to start!");
           player.reset();
           // loseLife();
