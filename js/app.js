@@ -175,6 +175,7 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
+// TODO Finish score panel functions loselife and addpoints
 // let points = 0;
 // let pointCounter = document.querySelector(".points");
 
