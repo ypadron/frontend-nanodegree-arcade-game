@@ -53,8 +53,22 @@ Enemy.prototype.render = function() {
 };
 
 // Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
+// This class requires an update(), render() and a handleInput() method.
+// Class declaration (special function)
+class Player {
+    constructor() {
+      this.startPosX = 200;
+      this.startPosY = 395;
+      this.x = this.startPosX;
+      this.y = this.startPosY;
+      this.lateral = 101;
+      this.vertical = 83;
+      this.sprite = "images/char-cat-girl.png"
+  }
+}
+
+/*
+// function expression (anonymous)
 const Player = function() {
     this.startPosX = 200;
     this.startPosY = 395;
@@ -65,6 +79,7 @@ const Player = function() {
     this.lateral = 101;
     this.vertical = 83;
 };
+*/
 
 Player.prototype.reset = function() {
     this.x = this.startPosX;
