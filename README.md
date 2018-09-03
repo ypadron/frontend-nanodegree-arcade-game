@@ -18,10 +18,12 @@ This game is a version of the classic arcade game Frogger. In this version you, 
 
 ## Instructions
 
-To play the game:
+To install:
 1. Clone or download (ZIP file) the repository using the green clown or download button on the right side of the screen.
 2. Navigate to the location of the clone or unZIPped file on your computer.
 3. Double click on the index.html file to open and play the game in your browser.
+
+To play click here: [Classic Arcade Game](https://ypadron.github.io/frontend-nanodegree-arcade-game/)
 
 
 ## Resources Used
