@@ -1,15 +1,5 @@
 // Enemies our player must avoid
-/*
-class Enemy {
-  constructor(x = 50, y = 50, speed = 25, sprite = "images/enemy-bug.png") {
-    this.x = x;
-    this.y = y;
-    this.speed = speed;
-    this.sprite = sprite;
-  }
-}
-*/
-
+// Enemy function expression (anonymous)
 var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
@@ -22,6 +12,18 @@ var Enemy = function(x, y, speed) {
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
 };
+
+/************************
+//Enemy class declaration
+class Enemy {
+  constructor(x = 50, y = 50, speed = 25, sprite = "images/enemy-bug.png") {
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
+    this.sprite = sprite;
+  }
+}
+*************************/
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -38,8 +40,7 @@ Enemy.prototype.update = function(dt) {
     //col * 101, row * 83
     for (let enemy of allEnemies) {
         if (player.y === this.y && (this.x + this.lateral/2 > player.x && this.x < player.x + player.lateral/2)) {
-          // alert("collision detected!!");
-          // alert("I'm hit. Back to Zero!");
+          // alert("I'm hit. Back to start!");
           player.reset();
           // loseLife();
       }
@@ -54,7 +55,7 @@ Enemy.prototype.render = function() {
 
 // Now write your own player class
 // This class requires an update(), render() and a handleInput() method.
-// Class declaration (special function)
+// Class declaration - not hoisted (special type of function)
 class Player {
     constructor() {
       this.startPosX = 200;
@@ -68,7 +69,7 @@ class Player {
 }
 
 /*
-// function expression (anonymous)
+// Player function expression (anonymous)
 const Player = function() {
     this.startPosX = 200;
     this.startPosY = 395;
@@ -92,7 +93,7 @@ Player.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    //Check to see if player has won/reached the water
+    //Check to see if player is safe/reached the water
     if(player.y === -20) {
       // console.log("You're a badass!!");
       // addPoints();
@@ -134,6 +135,11 @@ Player.prototype.handleInput = function(direction) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+const bugOne = new Enemy(-50, 63, 100);
+const bugFour = new Enemy(-202, 63, 275);
+const bugTwo = new Enemy(-50.5, 146, 300);
+const bugThree = new Enemy(-50, 229, 200);
+
 /*
 class BugOne extends Enemy {
     constructor(speed = 75, sprite, x, y = 100) {
@@ -143,12 +149,6 @@ class BugOne extends Enemy {
     }
 }
 */
-
-const bugOne = new Enemy(-50, 63, 100);
-const bugFour = new Enemy(-202, 63, 275);
-const bugTwo = new Enemy(-50.5, 146, 300);
-const bugThree = new Enemy(-50, 229, 200);
-
 /*
 class BugTwo extends Enemy {
   constructor(y = 150, speed = 150 ) {
@@ -159,7 +159,6 @@ class BugTwo extends Enemy {
 const allEnemies = [];
 
 allEnemies.push(bugOne, bugTwo, bugThree, bugFour);
-// allEnemies.push(bugTwo);
 
 const player = new Player();
 
@@ -187,7 +186,7 @@ function addPoints () {
 */
 
 /*
-function loseLife () {
+Player.prototype.loseLife = function() {
     let life = document.getElementsByClassName("fa-heart");
     let lifeSpan = [...life]
     for (i = 0; i < lifeSpan.length; i++) {
